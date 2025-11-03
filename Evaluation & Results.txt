@@ -1,0 +1,64 @@
+## 📊 Evaluation & Results
+
+Model performance on the **OASIS cross-sectional MRI dataset** (CDR > 0 as dementia target):
+
+### 🧪 Validation Set
+
+| Metric       | Value  |
+| :----------- | :----- |
+| **LogLoss**  | 0.4195 |
+| **Accuracy** | 0.846  |
+| **AUC**      | 0.9187 |
+| **F1-score** | 0.667  |
+
+**Confusion Matrix**
+
+```
+[[45  5]  
+ [ 5 10]]
+```
+
+---
+
+### 🧠 Test Set
+
+| Metric          | Value  |
+| :-------------- | :----- |
+| **LogLoss**     | 0.1950 |
+| **Accuracy**    | 0.909  |
+| **AUC**         | 0.974  |
+| **F1 (binary)** | 0.813  |
+| **F1 (macro)**  | 0.876  |
+
+**Classification Report**
+
+```
+              precision    recall  f1-score   support
+           0     0.9592    0.9216    0.9400        51
+           1     0.7647    0.8667    0.8125        15
+    accuracy                         0.9091        66
+   macro avg     0.8619    0.8941    0.8762        66
+weighted avg     0.9150    0.9091    0.9110        66
+```
+
+**Confusion Matrix**
+
+```
+[[47  4]  
+ [ 2 13]]
+```
+
+---
+
+### 🔍 Interpretation
+
+* The model achieved **91% accuracy** and **AUC ≈ 0.97**, showing strong discriminative power.
+* A balanced **F1-macro of 0.876** indicates reliable performance across both classes.
+* The confusion matrices show very few false negatives, which is valuable for dementia detection use cases.
+* **LogLoss (0.195)** confirms well-calibrated probabilistic predictions.
+
+---
+
+### 🚀 Notes
+
+These results demonstrate that a relatively simple XGBoost pipeline, with standard preprocessing and tabular MRI-derived features, can provide an effective baseline for dementia classification. Future steps could include feature importance analysis (SHAP) and hyperparameter optimization.
