@@ -62,3 +62,5 @@ weighted avg     0.9150    0.9091    0.9110        66
 ### 🚀 Notes
 
 These results demonstrate that a relatively simple XGBoost pipeline, with standard preprocessing and tabular MRI-derived features, can provide an effective baseline for dementia classification. Future steps could include feature importance analysis (SHAP) and hyperparameter optimization.
+
+![ROC Curve – XGBoost Alzheimer’s](assetsroc_curve.png)
